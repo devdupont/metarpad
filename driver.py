@@ -26,7 +26,8 @@ UPDATE_INTERVAL = 15 * 60  # 15 minutes
 
 SOURCES = (
     "/Volumes/CIRCUITPY",  # Mac
-    "D:\\", # Windows
+    "/media/pi/CIRCUITPY", # Raspberry Pi
+    "D:\\",                # Windows
     "E:\\",
     "F:\\",
     "G:\\",
