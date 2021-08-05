@@ -26,15 +26,20 @@ UPDATE_INTERVAL = 15 * 60  # 15 minutes
 
 SOURCES = (
     "/Volumes/CIRCUITPY",  # Mac
+    "D:\\", # Windows
+    "E:\\",
+    "F:\\",
+    "G:\\",
+    "H:\\",
 )
 
 
 def find_drive() -> Path:
     """Returns the path of a connected CIRCUITPY drive"""
     for source in SOURCES:
-        path = Path(source)
+        path = Path(source) / "code.py"
         if path.exists():
-            return path
+            return path.parent
     raise Exception("Could not find a CIRCUITPY drive on your machine")
 
 
