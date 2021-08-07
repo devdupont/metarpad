@@ -16,7 +16,13 @@ text_lines = macropad.display_text()
 
 ##-- Load Global Data --##
 
-DATA = json.load(open("metars.json"))
+try:
+    DATA = json.load(open("metars.json"))
+except:
+    text_lines[0].text = "No data found"
+    text_lines.show()
+    sleep(60)
+
 UPDATED = DATA["updated"]
 UPDATED = UPDATED.replace("T", " ")[:UPDATED.find(".")]
 DATA = DATA["stations"]
